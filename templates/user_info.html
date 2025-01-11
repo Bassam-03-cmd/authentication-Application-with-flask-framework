@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .logout-btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Hello, <span class="highlight">{{ username }}</span>!</h1>
+    <p>Your ID: <span class="highlight">{{ user_id }}</span></p>
+    <p>Your Email: <span class="highlight">{{ email }}</span></p>
+    <p>Your Role: <span class="highlight">{{ role }}</span></p>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<script>
+    function logout() {
+        document.cookie = "access_token=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        window.location.href = "/login";
+    }
+</script>
+
+</body>
+</html>
