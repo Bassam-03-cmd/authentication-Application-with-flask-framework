@@ -108,4 +108,4 @@ def is_potential_email(credential):
         - False if the credential is not a potential email address.
     """
 
-    return '@' in credential
+    return '@' in credential 
